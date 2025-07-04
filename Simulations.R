@@ -195,7 +195,7 @@ power_sample_size <- function(
     paste("Optimal Sample size:", optimal_n),
     paste("Reference Cooker:", ref_cooker),
     paste("n_sim:", n_sim),
-    paste("α:", alpha),
+    paste("Alpha:", alpha),
     paste("Target power:", power_tgt * 100),
     paste("Alternative:", alternative),
     paste("Seed:", seed)
