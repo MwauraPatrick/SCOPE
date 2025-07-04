@@ -1,10 +1,12 @@
 # App.R
 
 library(shiny)
-
-rsconnect::writeManifest()
-rsconnect::writeManifest(contentCategory = "site")
-
+#
+# setwd(dirname(rstudioapi::getSourceEditorContext()$path))
+#
+# rsconnect::writeManifest()
+# rsconnect::writeManifest(contentCategory = "site")
+#
 
 # # Optional settings
 # options(
