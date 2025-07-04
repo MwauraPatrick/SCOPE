@@ -1,0 +1,13 @@
+name: ShinyApp
+title: ShinyApp
+username: mwaurapatrick
+account: mwaurapatrick
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 14572404
+bundleId: 10454031
+url: https://mwaurapatrick.shinyapps.io/ShinyApp/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: reports/Cox_report_20250520_105927.pdf|reports/Cox_report_20250520_110308.pdf|reports/Cox_report_20250520_110512.pdf|reports/Cox_report_20250523_202503.pdf

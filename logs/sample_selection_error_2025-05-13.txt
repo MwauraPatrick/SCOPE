@@ -1,0 +1,5 @@
+Timestamp: 2025-05-13 03:47:18.12916
+Error in Sample Selection:
+No valid simulation data found
+Target Power:
+0.8

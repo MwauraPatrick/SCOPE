@@ -1,0 +1,334 @@
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #3498db;
+  --background-color: #f4f6f7;
+  --text-primary: #333;
+  --text-secondary: #6c757d;
+  --border-color: #e0e4e8;
+  --border-radius: 8px;
+  --font-scale: 1;
+  --transition-speed: 0.3s;
+  --body-bg-color: #ffffff;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: all var(--transition-speed) ease;
+}
+
+html, body {
+  min-height: 2000px;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--body-bg-color);
+  zoom: 90%;
+  color: var(--text-primary);
+  font-size: calc(16px * var(--font-scale));
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+.title-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 15px;
+  font-size: 30px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid #006ae6;
+  margin-bottom: 20px;
+}
+
+.no-fade-link {
+  color: inherit;
+  text-decoration: none;
+  transition: none !important;
+}
+
+.no-fade-link:hover,
+.no-fade-link:focus {
+  color: inherit;
+  text-decoration: none;
+  opacity: 1 !important;
+}
+
+.description-container {
+  position: sticky;
+  top: 70px;
+  z-index: 999;
+  background-color: #f8f9fa;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 15px;
+  margin-bottom: 0;
+}
+
+body > .row,
+.container-fluid,
+.fluid-page {
+  margin-top: 200px;
+  padding-bottom: 100px;
+}
+
+.simulation-progress-container {
+  position: sticky;
+  top: 200px;
+  z-index: 998;
+  margin: 20px 0;
+  padding: 15px;
+  background-color: #f5f5f5;
+  border-left: 5px solid var(--primary-color);
+  border-radius: 5px;
+}
+
+.progress {
+  height: 20px;
+  background-color: #e9ecef;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  background-color: var(--primary-color);
+  color: white;
+  line-height: 25px;
+  font-weight: bold;
+  transition: width 0.5s;
+  font-size: 14px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 0;
+}
+
+[class="col-"] {
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.col-md-2 {
+  flex: 1;
+  max-width: 20%;
+}
+
+.col-md-8 {
+  flex: 1;
+  max-width: 90%;
+}
+
+.input-section,
+.summary-section,
+.plot-section,
+.download-section {
+  background-color: #fff;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  overflow-y: auto;
+}
+
+.input-section,
+.summary-section,
+.download-section {
+  max-height: 650px;
+}
+
+.plot-section {
+  max-height: 700px;
+}
+
+.plot-section .plot-area {
+  height: calc(100% - 10px);
+  overflow: auto;
+}
+
+h1, h2, h3, h4 {
+  font-size: 22px;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th, td {
+  border: 1px solid #dee2e6;
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  background-color: #f1f1f1;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.footer {
+  background-color: var(--primary-color);
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-size: 16px;
+  margin-top: 20px;
+  position: relative;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .col-md-3,
+  .col-md-2,
+  .col-md-5 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .row {
+    gap: 0;
+    margin: 0;
+  }
+
+  .plot-area {
+    width: 100%;
+  }
+
+  .title-bar {
+    font-size: 20px;
+  }
+
+  .plot-container {
+    height: 500px;
+  }
+}
+
+.plot-container {
+  position: relative;
+  width: 100%;
+  height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
+  overflow: visible;
+}
+
+.plot-container:hover {
+  transform: scale(1.02);
+  z-index: 10;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  cursor: pointer;
+}
+
+.plot-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+  background-color: transparent;
+  border: 1px solid var(--text-secondary);
+  color: var(--text-secondary);
+  padding: 10px 15px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.plot-nav-btn:hover {
+  background-color: var(--text-secondary);
+  color: white;
+}
+
+.plot-nav-btn-left {
+  left: 10px;
+}
+
+.plot-nav-btn-right {
+  right: 10px;
+}
+
+.plot-container .shiny-plot-output {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease-in-out;
+}
+
+.plot-container:hover .shiny-plot-output {
+  transform: scale(1.01);
+}
+
+.form-group {
+  margin-bottom: 0.5rem;
+}
+
+.form-control,
+.custom-select {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+}
+
+.btn {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+}
+
+input + label,
+textarea + label,
+select + label {
+  font-weight: bold;
+}
+
+.primary-action-btn {
+  width: 70%;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 14px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.primary-action-btn:hover {
+  background-color: #0056b3;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
+
+.primary-action-btn:active {
+  background-color: #004085;
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.primary-action-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0,123,255,0.5);
+}
