@@ -15,3 +15,6 @@ source("server.R")
 
 # Launch the app
 shinyApp(ui = ui, server = server)
+
+
+rsconnect::writeManifest()
