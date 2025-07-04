@@ -2,6 +2,10 @@
 
 library(shiny)
 
+rsconnect::writeManifest()
+rsconnect::writeManifest(contentCategory = "site")
+
+
 # # Optional settings
 # options(
 #   shiny.sanitize.errors = TRUE,
@@ -15,6 +19,3 @@ source("server.R")
 
 # Launch the app
 shinyApp(ui = ui, server = server)
-
-
-rsconnect::writeManifest()
